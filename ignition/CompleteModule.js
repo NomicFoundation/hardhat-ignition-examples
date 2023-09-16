@@ -1,34 +1,34 @@
 // ./ignition/CompleteModule.js
-const { buildModule } = require("@ignored/hardhat-ignition");
+const { buildModule } = require('@nomicfoundation/hardhat-ignition')
 
-const withLibArtifact = require("../libArtifacts/ContractWithLibrary.json");
-const libArtifact = require("../libArtifacts/BasicLibrary.json");
+const withLibArtifact = require('../libArtifacts/ContractWithLibrary.json')
+const libArtifact = require('../libArtifacts/BasicLibrary.json')
 
-module.exports = buildModule("CompleteModule", (m) => {
-  const basic = m.contract("BasicContract");
-  const library = m.library("BasicLibrary");
-  const libFromArtifact = m.library("BasicLibrary", libArtifact, {
-    id: "BasicLibrary2",
-  });
-  const withLib = m.contract("ContractWithLibrary", withLibArtifact, [], {
+module.exports = buildModule('CompleteModule', (m) => {
+  const basic = m.contract('BasicContract')
+  const library = m.library('BasicLibrary')
+  const libFromArtifact = m.library('BasicLibrary', libArtifact, {
+    id: 'BasicLibrary2',
+  })
+  const withLib = m.contract('ContractWithLibrary', withLibArtifact, [], {
     libraries: { BasicLibrary: library },
-  });
+  })
 
-  const call = m.call(basic, "basicFunction", [40]);
-  const eventArg = m.readEventArgument(call, "BasicEvent", "eventArg");
-  m.staticCall(withLib, "readonlyFunction", [eventArg]);
+  const call = m.call(basic, 'basicFunction', [40])
+  const eventArg = m.readEventArgument(call, 'BasicEvent', 'eventArg')
+  m.staticCall(withLib, 'readonlyFunction', [eventArg])
 
-  const duplicate = m.contractAt("BasicContract", basic, {
-    id: "BasicContract2",
-  });
+  const duplicate = m.contractAt('BasicContract', basic, {
+    id: 'BasicContract2',
+  })
   const duplicateWithLib = m.contractAt(
-    "ContractWithLibrary",
+    'ContractWithLibrary',
     withLib,
     withLibArtifact,
-    { id: "ContractWithLibrary2" }
-  );
+    { id: 'ContractWithLibrary2' }
+  )
 
-  m.send("test-send", duplicate, 123n);
+  m.send('testSend', duplicate, 123n)
 
   return {
     basic,
@@ -37,5 +37,5 @@ module.exports = buildModule("CompleteModule", (m) => {
     withLib,
     duplicate,
     duplicateWithLib,
-  };
-});
+  }
+})
