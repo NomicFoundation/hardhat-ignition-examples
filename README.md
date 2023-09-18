@@ -73,3 +73,11 @@ To execute Hardhat tests using Ignition, run:
 ```shell
 npm run test
 ```
+
+## Learn more about Ignition
+
+To learn more about how to use Ignition, please read [the `docs/` section in its repository](https://github.com/NomicFoundation/ignition/tree/main/docs).
+
+## Support channels
+
+If you want need help using Ignition, you can join [`#hardhat-ignition` our Discord server](https://hardhat.org/discord).
