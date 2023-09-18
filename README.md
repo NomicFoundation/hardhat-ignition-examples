@@ -1,6 +1,6 @@
 # Ignition Usage Examples
 
-This repository offers a variety of examples demonstrating how to utilize Ignition effectively.
+This repository offers a variety of examples demonstrating how to use Ignition.
 
 ## Getting Started
 
