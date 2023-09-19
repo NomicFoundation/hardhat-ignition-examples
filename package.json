@@ -9,6 +9,6 @@
     "@nomicfoundation/hardhat-ignition": "^0.4.0",
     "@nomicfoundation/hardhat-toolbox": "3.0.0",
     "hardhat": "^2.14.0"
-  }
+  },
   "license": "MIT"
 }
