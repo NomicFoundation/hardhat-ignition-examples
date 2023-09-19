@@ -1,4 +1,4 @@
-# Ignition Usage Examples
+# Hardhat Ignition Usage Examples
 
 This repository offers a variety of examples demonstrating how to use Ignition.
 
